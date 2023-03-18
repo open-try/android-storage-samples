@@ -22,4 +22,9 @@
     <files-path
         name="grayimages"
         path="images/" />
+
+    <cache-path
+        name="shared_images"
+        path="images/" />
+
 </paths>

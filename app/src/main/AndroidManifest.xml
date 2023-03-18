@@ -103,11 +103,55 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".sharingshortcuts.MainSharingShortcutsActivity"
+            android:exported="true"
+            android:label="@string/app_09"
+            android:theme="@style/SharingShortcutsTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Reference resource file where the app's shortcuts are defined -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".sharingshortcuts.SendMessageActivity"
+            android:exported="false"
+            android:theme="@style/SharingShortcutsDialogTheme">
+            <!-- This activity can respond to Intents of type SEND and with text/plain data -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <!-- Only needed if you import the sharetarget AndroidX library that provides
+                 backwards compatibility with the old DirectShare API.
+                 The activity that receives the Sharing Shortcut intent needs to be taken into
+                 account with this chooser target provider. -->
+            <meta-data
+                android:name="android.service.chooser.chooser_target_service"
+                android:value="androidx.sharetarget.ChooserTargetServiceCompat" />
+        </activity>
+
+        <activity
+            android:name=".sharingshortcuts.SelectContactActivity"
+            android:exported="false"
+            android:theme="@style/SharingShortcutsDialogTheme" />
+
+        <!-- Only needed if you want to add a thumbnail to the direct share.
+            FileProvider is a subclass of ContentProvider that facilitates secure sharing.
+            Here we specify a FileProvider for our app. -->
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
+            <!-- Specify the directories the FileProvider can generate content URIs for. -->
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />

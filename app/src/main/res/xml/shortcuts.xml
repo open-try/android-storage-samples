@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <share-target android:targetClass="com.opentry.android_storage_samples.sharingshortcuts.SendMessageActivity">
+        <data android:mimeType="text/plain" />
+        <category android:name="com.opentry.android_storage_samples.category.TEXT_SHARE_TARGET" />
+    </share-target>
+</shortcuts>
