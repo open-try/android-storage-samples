@@ -53,6 +53,16 @@
         <activity
             android:name=".filemanager.SettingsActivity"
             android:exported="true" />
+        <activity
+            android:name=".fileprovider.MainFileProviderActivity"
+            android:exported="true"
+            android:label="@string/app_06">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -64,15 +74,6 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity
-            android:name=".fileprovider.MainFileProviderActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
