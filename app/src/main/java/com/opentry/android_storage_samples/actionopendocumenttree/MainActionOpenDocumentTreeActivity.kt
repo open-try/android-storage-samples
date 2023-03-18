@@ -1,4 +1,4 @@
-package com.onwaystudio.action_open_document_tree
+package com.opentry.android_storage_samples.actionopendocumenttree
 
 import android.content.Intent
 import android.net.Uri

@@ -1,4 +1,4 @@
-package com.onwaystudio.action_open_document_tree
+package com.opentry.android_storage_samples.actionopendocumenttree
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -64,7 +64,7 @@ class DirectoryFragment : Fragment() {
 
         viewModel.openDirectory.observe(viewLifecycleOwner, Observer { event ->
             event.getContentIfNotHandled()?.let { directory ->
-                (activity as? MainActivity)?.showDirectoryContents(directory.uri)
+                (activity as? MainActionOpenDocumentTreeActivity)?.showDirectoryContents(directory.uri)
             }
         })
 

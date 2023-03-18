@@ -1,4 +1,4 @@
-package com.onwaystudio.action_open_document_tree
+package com.opentry.android_storage_samples.actionopendocumenttree
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
