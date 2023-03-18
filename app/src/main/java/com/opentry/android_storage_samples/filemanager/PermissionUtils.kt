@@ -1,6 +1,6 @@
 @file:JvmName("PermissionUtils")
 
-package com.onwaystudio.file_manager
+package com.opentry.android_storage_samples.filemanager
 
 import android.Manifest
 import android.app.AppOpsManager

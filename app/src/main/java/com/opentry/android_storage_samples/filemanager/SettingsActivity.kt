@@ -1,10 +1,11 @@
-package com.onwaystudio.file_manager
+package com.opentry.android_storage_samples.filemanager
 
 import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.onwaystudio.file_manager.databinding.ActivitySettingsBinding
+import com.opentry.android_storage_samples.R
+import com.opentry.android_storage_samples.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingsBinding

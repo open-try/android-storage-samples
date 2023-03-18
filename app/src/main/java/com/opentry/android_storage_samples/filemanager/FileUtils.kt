@@ -1,10 +1,11 @@
-package com.onwaystudio.file_manager
+package com.opentry.android_storage_samples.filemanager
 
 import android.content.Intent
 import android.os.Environment
 import android.webkit.MimeTypeMap
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import com.opentry.android_storage_samples.R
 import java.io.File
 
 private const val AUTHORITY = "com.onwaystudio.file_manager.provider"

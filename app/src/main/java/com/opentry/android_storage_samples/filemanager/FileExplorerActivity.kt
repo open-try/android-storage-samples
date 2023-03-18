@@ -1,4 +1,4 @@
-package com.onwaystudio.file_manager
+package com.opentry.android_storage_samples.filemanager
 
 import android.content.Intent
 import android.os.Build
@@ -8,7 +8,8 @@ import android.os.Environment.getExternalStorageDirectory
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.onwaystudio.file_manager.databinding.ActivityFileExplorerBinding
+import com.opentry.android_storage_samples.R
+import com.opentry.android_storage_samples.databinding.ActivityFileExplorerBinding
 import java.io.File
 
 const val MANAGE_EXTERNAL_STORAGE_PERMISSION_REQUEST = 1
