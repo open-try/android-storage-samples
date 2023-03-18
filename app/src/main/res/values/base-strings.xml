@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_10">SharingShortcuts</string>
 
-    <string name="app_11">StorageClient</string>
-    <string name="intro_message">
-        Using the OPEN_DOCUMENT intent, a client app can access a list of Document Providers
-        on the device, and choose a file from any of them.
-        \n\nTo demonstrate this, click the button below to open up the Storage Access Framework
-        interface, and choose an image on your device.  It will be displayed in this app.
-    </string>
 </resources>
