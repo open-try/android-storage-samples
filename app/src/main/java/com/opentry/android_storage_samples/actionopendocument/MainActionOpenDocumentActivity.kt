@@ -19,7 +19,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.transaction
 import com.opentry.android_storage_samples.R
 
-const val DOCUMENT_FRAGMENT_TAG = "com.onwaystudio.action_open_document.tags.DOCUMENT_FRAGMENT"
+const val DOCUMENT_FRAGMENT_TAG = "com.opentry.android_storage_samples.actionopendocument.tags.DOCUMENT_FRAGMENT"
 
 /**
  * Simple activity to host [ActionOpenDocumentFragment].
@@ -142,5 +142,5 @@ class MainActionOpenDocumentActivity : AppCompatActivity() {
 private const val OPEN_DOCUMENT_REQUEST_CODE = 0x33
 private const val TAG = "MainActivity"
 private const val LAST_OPENED_URI_KEY =
-    "com.onwaystudio.action_open_document.pref.LAST_OPENED_URI_KEY"
+    "com.opentry.android_storage_samples.actionopendocument.pref.LAST_OPENED_URI_KEY"
 

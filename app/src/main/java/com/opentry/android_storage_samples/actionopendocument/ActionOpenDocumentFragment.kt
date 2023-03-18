@@ -37,7 +37,7 @@ class ActionOpenDocumentFragment : Fragment() {
 
     companion object {
         private const val DOCUMENT_URI_ARGUMENT =
-            "com.onwaystudio.action_open_document.args.DOCUMENT_URI_ARGUMENT"
+            "com.opentry.android_storage_samples.actionopendocument.args.DOCUMENT_URI_ARGUMENT"
 
         fun newInstance(documentUri: Uri): ActionOpenDocumentFragment {
 
@@ -171,7 +171,7 @@ class ActionOpenDocumentFragment : Fragment() {
  * Key string for saving the state of current page index.
  */
 private const val CURRENT_PAGE_INDEX_KEY =
-    "com.onwaystudio.action_open_document.state.CURRENT_PAGE_INDEX_KEY"
+    "com.opentry.android_storage_samples.actionopendocument.state.CURRENT_PAGE_INDEX_KEY"
 
 private const val TAG = "ActionOpenDocumentFragment"
 private const val INITIAL_PAGE_INDEX = 0
