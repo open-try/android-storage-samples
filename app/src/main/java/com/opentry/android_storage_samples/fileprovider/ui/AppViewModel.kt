@@ -97,7 +97,7 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             withContext(Dispatchers.IO) {
                 val response = httpClient.newCall(request).execute()
 
-                response.body?.let { responseBody ->
+                response.body.let { responseBody ->
                     val imageFile = File(imagesFolder, generateFilename(Source.INTERNET))
                     // TODO: Apply grayscale filter before saving image
                     imageFile.writeBytes(responseBody.bytes())
