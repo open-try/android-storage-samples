@@ -106,7 +106,7 @@
         <activity
             android:name=".sharingshortcuts.MainSharingShortcutsActivity"
             android:exported="true"
-            android:label="@string/app_09"
+            android:label="@string/app_10"
             android:theme="@style/SharingShortcutsTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -141,6 +141,16 @@
             android:name=".sharingshortcuts.SelectContactActivity"
             android:exported="false"
             android:theme="@style/SharingShortcutsDialogTheme" />
+
+        <activity
+            android:name=".storageclient.MainActivity"
+            android:exported="true"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- Only needed if you want to add a thumbnail to the direct share.
             FileProvider is a subclass of ContentProvider that facilitates secure sharing.
