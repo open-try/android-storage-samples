@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".actionopendocumenttree.MainActionOpenDocumentTreeActivity"
             android:exported="true"
             android:theme="@style/Theme.DirSelect.NoActionBar">
             <intent-filter>
