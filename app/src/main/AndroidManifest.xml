@@ -78,7 +78,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".safdemos.MainActivity"
+            android:name=".safdemos.MainSAFDemosActivity"
             android:exported="true"
             android:label="@string/app_08"
             android:theme="@style/Theme.SAFDemos">

@@ -1,10 +1,10 @@
 package com.opentry.android_storage_samples.safdemos
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.opentry.android_storage_samples.databinding.ActivityMainSafDemosBinding
 
-class MainActivity : AppCompatActivity() {
+class MainSAFDemosActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
