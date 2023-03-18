@@ -17,7 +17,7 @@
     <string name="app_name">Storage Samples</string>
     <string name="project_name">android-storage-samples</string>
 
-    <string name="app_addViewer">aodViewer</string>
+    <string name="app_01">aodViewer</string>
     <string name="app_name_with_index">aodViewer (%1$d/%2$d)</string>
     <string name="open_file">Open…</string>
     <string name="info">Info</string>
@@ -27,5 +27,10 @@
     <string name="intro_message">This sample demonstrates how to use PdfRenderer to display PDF documents on the screen.</string>
     <string name="open_call_to_action">Click "open" to view the contents of a PDF.</string>
 
+    <string name="app_02">ktFiles</string>
+    <string name="rename_title">Rename</string>
+    <string name="rename_okay">Rename</string>
+    <string name="rename_cancel">Cancel</string>
 
+    <string name="error_no_activity">No activity found to open "%1$s".</string>
 </resources>

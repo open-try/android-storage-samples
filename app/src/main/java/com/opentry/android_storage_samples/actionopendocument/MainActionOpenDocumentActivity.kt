@@ -24,7 +24,7 @@ const val DOCUMENT_FRAGMENT_TAG = "com.onwaystudio.action_open_document.tags.DOC
 /**
  * Simple activity to host [ActionOpenDocumentFragment].
  */
-class MainActivity : AppCompatActivity() {
+class MainActionOpenDocumentActivity : AppCompatActivity() {
 
     private lateinit var noDocumentView: ViewGroup
 
