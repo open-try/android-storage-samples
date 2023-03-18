@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/log_fragment"
-        android:name=".common.logger.LogFragment"
+        android:name="com.opentry.android_storage_samples.storageclient.storageclient.StorageClientFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />

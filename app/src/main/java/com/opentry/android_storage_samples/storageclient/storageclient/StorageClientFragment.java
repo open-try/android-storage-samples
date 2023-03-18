@@ -30,11 +30,10 @@ import java.io.IOException;
 
 public class StorageClientFragment extends Fragment {
 
+    public static final String TAG = "StorageClientFragment";
     // A request code's purpose is to match the result of a "startActivityForResult" with
     // the type of the original request.  Choose any value.
     private static final int READ_REQUEST_CODE = 1337;
-
-    public static final String TAG = "StorageClientFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
