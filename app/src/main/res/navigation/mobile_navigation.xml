@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.opentry.file_provider.ui.DashboardFragment"
+        android:name="com.opentry.android_storage_samples.fileprovider.ui.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_gallery"
-        android:name="com.opentry.file_provider.ui.GalleryFragment"
+        android:name="com.opentry.android_storage_samples.fileprovider.ui.GalleryFragment"
         android:label="@string/title_gallery"
         tools:layout="@layout/fragment_gallery" />
 </navigation>
