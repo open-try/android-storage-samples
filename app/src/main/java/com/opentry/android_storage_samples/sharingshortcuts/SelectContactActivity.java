@@ -1,5 +1,6 @@
 package com.opentry.android_storage_samples.sharingshortcuts;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class SelectContactActivity extends Activity {
                 }
 
                 @Override
-                public void onBindViewHolder(@NonNull ContactViewHolder holder, final int position) {
+                public void onBindViewHolder(@NonNull ContactViewHolder holder, @SuppressLint("RecyclerView") final int position) {
                     Contact contact = Contact.CONTACTS[position];
                     ContactViewBinder.bind(contact, (TextView) holder.itemView);
                     holder.itemView.setOnClickListener(new View.OnClickListener() {

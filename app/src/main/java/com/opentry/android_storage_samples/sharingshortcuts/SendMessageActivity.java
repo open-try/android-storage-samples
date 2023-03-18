@@ -1,5 +1,6 @@
 package com.opentry.android_storage_samples.sharingshortcuts;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.pm.ShortcutManagerCompat;
 
 import com.opentry.android_storage_samples.R;
@@ -37,12 +39,11 @@ public class SendMessageActivity extends Activity {
     private TextView mTextContactName;
     private TextView mTextMessageBody;
     private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @SuppressLint("NonConstantResourceId")
         @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.send:
-                    send();
-                    break;
+        public void onClick(@NonNull View view) {
+            if (view.getId() == R.id.send) {
+                send();
             }
         }
     };

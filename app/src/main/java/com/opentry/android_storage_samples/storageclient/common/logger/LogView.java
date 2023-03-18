@@ -1,5 +1,6 @@
 package com.opentry.android_storage_samples.storageclient.common.logger;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 /**
  * Simple TextView which is used to output log data received through the LogNode interface.
  */
+@SuppressLint("AppCompatCustomView")
 public class LogView extends TextView implements LogNode {
 
     // The next LogNode in the chain.
