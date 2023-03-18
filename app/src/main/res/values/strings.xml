@@ -65,4 +65,16 @@
     <string name="app_06">Gray Gallery</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_gallery">Gallery</string>
+
+    <string name="app_07">MediaStore</string>
+
+    <string name="open_album">Open Album</string>
+    <string name="grant_permission">Grant Permission</string>
+
+    <string name="permission_not_granted">App requires access to storage to access items stored in MediaStore.</string>
+
+    <string name="delete_dialog_title">Delete?</string>
+    <string name="delete_dialog_message">Delete %1$s?</string>
+    <string name="delete_dialog_positive">Delete</string>
+    <string name="delete_dialog_negative">Cancel</string>
 </resources>
