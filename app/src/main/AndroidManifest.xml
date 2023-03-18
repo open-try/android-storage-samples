@@ -33,14 +33,13 @@
             android:name=".actionopendocumenttree.MainActionOpenDocumentTreeActivity"
             android:exported="true"
             android:label="@string/app_02"
-            android:theme="@style/Theme.DirSelect.NoActionBar">
+            android:theme="@style/Theme.MainApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".filemanager.FileExplorerActivity"
             android:exported="true"
@@ -51,7 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".filemanager.SettingsActivity"
             android:exported="true" />
@@ -65,7 +63,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>
