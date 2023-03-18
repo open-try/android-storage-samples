@@ -77,4 +77,14 @@
     <string name="delete_dialog_message">Delete %1$s?</string>
     <string name="delete_dialog_positive">Delete</string>
     <string name="delete_dialog_negative">Cancel</string>
+
+    <string name="app_08">SAF Demos</string>
+    <string name="image_picker_title">Select an image</string>
+    <string name="image_picker_action_description">Pick an image</string>
+
+    <string name="image_picker_demo_title">Image Picker</string>
+    <string name="image_picker_demo_text">
+        Demo of using ACTION_GET_CONTENT to allow a user to pick an image, for example, for a
+        profile picture.
+    </string>
 </resources>

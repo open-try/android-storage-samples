@@ -51,4 +51,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Base application theme. -->
+    <style name="Theme.SAFDemos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimarySAFDemos</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkSAFDemos</item>
+        <item name="colorAccent">@color/colorAccentSAFDemos</item>
+        <item name="colorSecondary">@color/colorSecondarySAFDemos</item>
+
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+        <item name="popupMenuStyle">@style/Widget.MaterialComponents.PopupMenu</item>
+    </style>
+
 </resources>

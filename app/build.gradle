@@ -32,13 +32,9 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        dataBinding true
-        viewBinding true
-    }
-    buildFeatures {
         buildConfig = false
         viewBinding = true
-        dataBinding = false
+        dataBinding = true
         aidl = false
         renderScript = false
         resValues = false
@@ -54,7 +50,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation 'androidx.databinding:library:3.2.0-alpha11'
+    //implementation 'androidx.databinding:library:3.2.0-alpha11'
     implementation 'androidx.databinding:databinding-runtime:7.4.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -141,4 +137,5 @@ dependencies {
     testImplementation "junit:junit:4.13.2"
     androidTestImplementation "androidx.test:runner:1.5.2"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    //
 }
