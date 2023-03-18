@@ -143,8 +143,9 @@
             android:theme="@style/SharingShortcutsDialogTheme" />
 
         <activity
-            android:name=".storageclient.MainActivity"
+            android:name=".storageclient.storageclient.MainStorageClientActivity"
             android:exported="true"
+            android:label="@string/app_11"
             android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
