@@ -25,6 +25,7 @@ import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.Log;
@@ -134,7 +135,9 @@ public class ImageProvider extends ContentProvider {
             honoredArgs = Arrays.copyOf(honoredArgs, size);
         }
         bundle.putStringArray(ContentResolver.EXTRA_HONORED_ARGS, honoredArgs);
-        result.setExtras(bundle);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            result.setExtras(bundle);
+        }
         return result;
     }
 
@@ -179,7 +182,7 @@ public class ImageProvider extends ContentProvider {
      * @param result the cursor to modify
      * @param file   the File object representing the desired file (may be null if given docID)
      */
-    private void includeFile(MatrixCursor result, File file) {
+    private void includeFile(@NonNull MatrixCursor result, @NonNull File file) {
         MatrixCursor.RowBuilder row = result.newRow();
         row.add(ImageContract.Columns.DISPLAY_NAME, file.getName());
         row.add(ImageContract.Columns.SIZE, file.length());
@@ -211,7 +214,7 @@ public class ImageProvider extends ContentProvider {
      * @param resId     the resource ID of the file to write to internal storage
      * @param extension the file extension (ex. .png, .mp3)
      */
-    private void writeFileToInternalStorage(Context context, int resId, String extension) {
+    private void writeFileToInternalStorage(@NonNull Context context, int resId, String extension) {
         InputStream ins = context.getResources().openRawResource(resId);
         int size;
         byte[] buffer = new byte[1024];
@@ -230,7 +233,8 @@ public class ImageProvider extends ContentProvider {
         }
     }
 
-    private int[] getResourceIdArray(Context context, int arrayResId) {
+    @NonNull
+    private int[] getResourceIdArray(@NonNull Context context, int arrayResId) {
         TypedArray ar = context.getResources().obtainTypedArray(arrayResId);
         int len = ar.length();
         int[] resIds = new int[len];

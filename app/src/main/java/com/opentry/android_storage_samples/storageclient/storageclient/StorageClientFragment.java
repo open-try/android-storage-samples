@@ -84,7 +84,7 @@ public class StorageClientFragment extends Fragment {
             // The document selected by the user won't be returned in the intent.
             // Instead, a URI to that document will be contained in the return intent
             // provided to this method as a parameter.  Pull that uri using "resultData.getData()"
-            Uri uri = null;
+            Uri uri;
             if (resultData != null) {
                 uri = resultData.getData();
                 Log.i(TAG, "Uri: " + uri.toString());
@@ -104,7 +104,7 @@ public class StorageClientFragment extends Fragment {
         if (uri != null) {
             // Since the URI is to an image, create and show a DialogFragment to display the
             // image to the user.
-            FragmentManager fm = getActivity().getSupportFragmentManager();
+            FragmentManager fm = requireActivity().getSupportFragmentManager();
             ImageDialogFragment imageDialog = new ImageDialogFragment();
             Bundle fragmentArguments = new Bundle();
             fragmentArguments.putParcelable("URI", uri);
@@ -119,13 +119,14 @@ public class StorageClientFragment extends Fragment {
      * DialogFragment which displays an image, given a URI.
      */
     public static class ImageDialogFragment extends DialogFragment {
-        private Dialog mDialog;
         private Uri mUri;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            mUri = getArguments().getParcelable("URI");
+            if (getArguments() != null) {
+                mUri = getArguments().getParcelable("URI");
+            }
         }
 
         /**
@@ -138,7 +139,7 @@ public class StorageClientFragment extends Fragment {
             ParcelFileDescriptor parcelFileDescriptor = null;
             try {
                 parcelFileDescriptor =
-                        getActivity().getContentResolver().openFileDescriptor(uri, "r");
+                        requireActivity().getContentResolver().openFileDescriptor(uri, "r");
                 FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
                 Bitmap image = BitmapFactory.decodeFileDescriptor(fileDescriptor);
                 parcelFileDescriptor.close();
@@ -158,9 +159,10 @@ public class StorageClientFragment extends Fragment {
             }
         }
 
+        @NonNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            mDialog = super.onCreateDialog(savedInstanceState);
+            Dialog mDialog = super.onCreateDialog(savedInstanceState);
             // To optimize for the "lightbox" style layout.  Since we're not actually displaying a
             // title, remove the bar along the top of the fragment where a dialog title would
             // normally go.
@@ -181,6 +183,7 @@ public class StorageClientFragment extends Fragment {
                     return getBitmapFromUri(uris[0]);
                 }
 
+                @SuppressLint("StaticFieldLeak")
                 @Override
                 protected void onPostExecute(Bitmap bitmap) {
                     imageView.setImageBitmap(bitmap);
@@ -211,10 +214,9 @@ public class StorageClientFragment extends Fragment {
             // The query, since it only applies to a single document, will only return one row.
             // no need to filter, sort, or select fields, since we want all fields for one
             // document.
-            Cursor cursor = getActivity().getContentResolver()
-                    .query(uri, null, null, null, null, null);
 
-            try {
+            try (Cursor cursor = requireActivity().getContentResolver()
+                    .query(uri, null, null, null, null, null)) {
                 // moveToFirst() returns false if the cursor has 0 rows.  Very handy for
                 // "if there's anything to look at, look at it" conditionals.
                 if (cursor != null && cursor.moveToFirst()) {
@@ -231,7 +233,7 @@ public class StorageClientFragment extends Fragment {
                     // term for "unpredictable".  So as a rule, check if it's null before assigning
                     // to an int.  This will happen often:  The storage API allows for remote
                     // files, whose size might not be locally known.
-                    String size = null;
+                    String size;
                     if (!cursor.isNull(sizeIndex)) {
                         // Technically the column stores an int, but cursor.getString will do the
                         // conversion automatically.
@@ -240,10 +242,6 @@ public class StorageClientFragment extends Fragment {
                         size = "Unknown";
                     }
                     Log.i(TAG, "Size: " + size);
-                }
-            } finally {
-                if (cursor != null) {
-                    cursor.close();
                 }
             }
             // END_INCLUDE (dump_metadata)

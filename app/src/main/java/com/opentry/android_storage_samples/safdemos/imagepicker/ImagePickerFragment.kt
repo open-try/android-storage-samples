@@ -19,7 +19,7 @@ class ImagePickerFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentImagePickerBinding.inflate(layoutInflater)
 
         binding.selectImageButton.setOnClickListener {

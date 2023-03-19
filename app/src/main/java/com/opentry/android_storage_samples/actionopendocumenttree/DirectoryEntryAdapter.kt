@@ -1,5 +1,6 @@
 package com.opentry.android_storage_samples.actionopendocumenttree
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,6 +46,7 @@ class DirectoryEntryAdapter(
 
     override fun getItemCount() = directoryEntries.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setEntries(newList: List<CachingDocumentFile>) {
         synchronized(directoryEntries) {
             directoryEntries.clear()

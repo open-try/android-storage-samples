@@ -38,13 +38,9 @@ public class SendMessageActivity extends Activity {
     // View references.
     private TextView mTextContactName;
     private TextView mTextMessageBody;
-    private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
-        @SuppressLint("NonConstantResourceId")
-        @Override
-        public void onClick(@NonNull View view) {
-            if (view.getId() == R.id.send) {
-                send();
-            }
+    private final View.OnClickListener mOnClickListener = view -> {
+        if (view.getId() == R.id.send) {
+            send();
         }
     };
 
@@ -75,20 +71,18 @@ public class SendMessageActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case REQUEST_SELECT_CONTACT:
-                if (resultCode == RESULT_OK) {
-                    mContactId = data.getIntExtra(Contact.ID, Contact.INVALID_ID);
-                }
-                // Give up sharing the send_message if the user didn't choose a contact.
-                if (mContactId == Contact.INVALID_ID) {
-                    finish();
-                    return;
-                }
-                prepareUi();
-                break;
-            default:
-                super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_SELECT_CONTACT) {
+            if (resultCode == RESULT_OK) {
+                mContactId = data.getIntExtra(Contact.ID, Contact.INVALID_ID);
+            }
+            // Give up sharing the send_message if the user didn't choose a contact.
+            if (mContactId == Contact.INVALID_ID) {
+                finish();
+                return;
+            }
+            prepareUi();
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
@@ -107,7 +101,7 @@ public class SendMessageActivity extends Activity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
                     && intent.hasExtra(ShortcutManagerCompat.EXTRA_SHORTCUT_ID)) {
                 String shortcutId = intent.getStringExtra(ShortcutManagerCompat.EXTRA_SHORTCUT_ID);
-                mContactId = Integer.valueOf(shortcutId);
+                mContactId = Integer.parseInt(shortcutId);
             } else {
                 // The text was shared and the user chose our app
                 mContactId = Contact.INVALID_ID;

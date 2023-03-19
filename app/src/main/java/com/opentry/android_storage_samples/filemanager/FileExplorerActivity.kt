@@ -84,7 +84,8 @@ class FileExplorerActivity : AppCompatActivity() {
 
         adapter.clear()
         adapter.addAll(filesList.map {
-            if (it.path == selectedItem.parentFile.path) {
+            //if (it.path == selectedItem.parentFile.path) {
+            if (it.path == selectedItem.parentFile!!.path) {
                 renderParentLink(this)
             } else {
                 renderItem(this, it)

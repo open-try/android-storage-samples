@@ -26,7 +26,7 @@ public class SelectContactActivity extends Activity {
      */
     public static final String ACTION_SELECT_CONTACT =
             "com.opentry.android_storage_samples.intent.action.SELECT_CONTACT";
-    private final RecyclerView.Adapter mContactAdapter =
+    private final RecyclerView.Adapter<ContactViewHolder> mContactAdapter =
             new RecyclerView.Adapter<ContactViewHolder>() {
 
                 @NonNull
@@ -42,14 +42,11 @@ public class SelectContactActivity extends Activity {
                 public void onBindViewHolder(@NonNull ContactViewHolder holder, @SuppressLint("RecyclerView") final int position) {
                     Contact contact = Contact.CONTACTS[position];
                     ContactViewBinder.bind(contact, (TextView) holder.itemView);
-                    holder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent data = new Intent();
-                            data.putExtra(Contact.ID, position);
-                            setResult(RESULT_OK, data);
-                            finish();
-                        }
+                    holder.itemView.setOnClickListener(view -> {
+                        Intent data = new Intent();
+                        data.putExtra(Contact.ID, position);
+                        setResult(RESULT_OK, data);
+                        finish();
                     });
                 }
 

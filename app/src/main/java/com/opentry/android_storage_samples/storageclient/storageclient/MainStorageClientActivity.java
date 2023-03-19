@@ -57,9 +57,10 @@ public class MainStorageClientActivity extends SampleActivityBase {
 
         // On screen logging via a fragment with a TextView.
         LogFragment logFragment = (LogFragment) getSupportFragmentManager().findFragmentById(R.id.log_fragment);
-        msgFilter.setNext(logFragment.getLogView());
-        logFragment.getLogView().setTextAppearance(this, R.style.Log);
-
+        if (logFragment != null) {
+            msgFilter.setNext(logFragment.getLogView());
+            logFragment.getLogView().setTextAppearance(this, R.style.Log);
+        }
 
         Log.i(TAG, "Ready");
     }

@@ -23,6 +23,7 @@ import android.content.ContentResolver;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -65,6 +67,7 @@ public class ImageClientFragment extends Fragment {
      */
     private AtomicInteger mOffset = new AtomicInteger(0);
 
+    @NonNull
     public static ImageClientFragment newInstance() {
 
         Bundle args = new Bundle();
@@ -76,7 +79,7 @@ public class ImageClientFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_image_client, container, false);
     }
@@ -125,6 +128,7 @@ public class ImageClientFragment extends Fragment {
 
     private class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor> {
 
+        @NonNull
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             final Activity activity = ImageClientFragment.this.getActivity();
@@ -134,14 +138,19 @@ public class ImageClientFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putInt(ContentResolver.QUERY_ARG_OFFSET, mOffset.intValue());
                     bundle.putInt(ContentResolver.QUERY_ARG_LIMIT, LIMIT);
-                    return activity.getContentResolver().query(ImageContract.CONTENT_URI, null, bundle, null);
+                    if (activity != null) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            return activity.getContentResolver().query(ImageContract.CONTENT_URI, null, bundle, null);
+                        }
+                    }
+                    return null;
                 }
             };
         }
 
         @SuppressLint("Range")
         @Override
-        public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        public void onLoadFinished(Loader<Cursor> loader, @NonNull Cursor cursor) {
             Bundle extras = cursor.getExtras();
             int totalSize = extras.getInt(ContentResolver.EXTRA_SIZE);
             mAdapter.setTotalSize(totalSize);

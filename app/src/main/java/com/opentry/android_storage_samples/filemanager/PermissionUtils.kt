@@ -96,7 +96,7 @@ fun requestStoragePermissionApi30(activity: AppCompatActivity) {
     activity.startActivityForResult(intent, MANAGE_EXTERNAL_STORAGE_PERMISSION_REQUEST)
 }
 
-@RequiresApi(19)
+//@RequiresApi(19)
 fun checkStoragePermissionApi19(activity: AppCompatActivity): Boolean {
     val status =
         ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -104,7 +104,7 @@ fun checkStoragePermissionApi19(activity: AppCompatActivity): Boolean {
     return status == PackageManager.PERMISSION_GRANTED
 }
 
-@RequiresApi(19)
+//@RequiresApi(19)
 fun requestStoragePermissionApi19(activity: AppCompatActivity) {
     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     ActivityCompat.requestPermissions(
