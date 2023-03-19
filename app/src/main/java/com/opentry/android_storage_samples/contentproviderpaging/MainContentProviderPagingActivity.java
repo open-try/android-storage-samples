@@ -25,7 +25,7 @@ import com.opentry.android_storage_samples.R;
 /**
  * The launcher Activity.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainContentProviderPagingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".contentproviderpaging.MainActivity"
+            android:name=".contentproviderpaging.MainContentProviderPagingActivity"
             android:exported="true"
             android:label="@string/app_03"
             android:theme="@style/AppThemeContentProviderPaging">
