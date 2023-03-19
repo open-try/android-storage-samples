@@ -49,8 +49,7 @@
         <activity
             android:name=".contentproviderpaging.MainContentProviderPagingActivity"
             android:exported="true"
-            android:label="@string/app_03"
-            android:theme="@style/AppThemeContentProviderPaging">
+            android:label="@string/app_03">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,7 +70,9 @@
         </activity>
         <activity
             android:name=".filemanager.SettingsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".filemanager.FileExplorerActivity"
+            android:theme="@style/Theme.MainApp.NoActionBar" />
         <activity
             android:name=".fileprovider.MainFileProviderActivity"
             android:exported="true"
