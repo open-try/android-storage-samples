@@ -16,6 +16,7 @@
 
 package com.opentry.android_storage_samples.contentproviderpaging;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.ContentResolver;
@@ -133,12 +134,12 @@ public class ImageClientFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putInt(ContentResolver.QUERY_ARG_OFFSET, mOffset.intValue());
                     bundle.putInt(ContentResolver.QUERY_ARG_LIMIT, LIMIT);
-                    return activity.getContentResolver()
-                            .query(ImageContract.CONTENT_URI, null, bundle, null);
+                    return activity.getContentResolver().query(ImageContract.CONTENT_URI, null, bundle, null);
                 }
             };
         }
 
+        @SuppressLint("Range")
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
             Bundle extras = cursor.getExtras();

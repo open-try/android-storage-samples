@@ -34,6 +34,13 @@
 
     <string name="error_no_activity">No activity found to open "%1$s".</string>
 
+    <string name="app_03">ContentProvider Paging sample</string>
+    <string name="root_summary">The root directory of the documents</string>
+
+    <string name="fetched_images_out_of">Fetched from %1$d to %2$d images out of %3$d in total.</string>
+    <string name="image_cat_content_description">A cat image</string>
+    <string name="show_images">Show images</string>
+
     <string name="app_05">File Manager</string>
     <string name="go_parent_label">"⬆️ Parent folder"</string>
     <string name="folder_item">🗂 %1$s</string>

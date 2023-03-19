@@ -32,6 +32,8 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.opentry.android_storage_samples.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
