@@ -25,49 +25,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainApp"
         tools:targetApi="31">
+
         <activity
-            android:name=".actionopendocument.MainActionOpenDocumentActivity"
-            android:exported="true"
-            android:label="@string/app_01">
+            android:name="com.opentry.android_storage_samples.MainAppActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".actionopendocument.MainActionOpenDocumentActivity"
+            android:exported="true"
+            android:label="@string/app_01"/>
         <activity
             android:name=".actionopendocumenttree.MainActionOpenDocumentTreeActivity"
             android:exported="true"
             android:label="@string/app_02"
-            android:theme="@style/Theme.MainApp.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.MainApp.NoActionBar"/>
         <activity
             android:name=".contentproviderpaging.MainContentProviderPagingActivity"
             android:exported="true"
-            android:label="@string/app_03">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/app_03"/>
         <activity
             android:name=".filemanager.FileExplorerActivity"
             android:exported="true"
             android:label="@string/app_05"
-            android:theme="@style/Theme.MainApp.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.MainApp.NoActionBar"/>
         <activity
             android:name=".filemanager.SettingsActivity"
             android:exported="true"
@@ -76,46 +61,22 @@
         <activity
             android:name=".fileprovider.MainFileProviderActivity"
             android:exported="true"
-            android:label="@string/app_06">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/app_06"/>
         <activity
             android:name=".mediastore.MainMediaStoreActivity"
             android:exported="true"
             android:label="@string/app_07"
-            android:theme="@style/Theme.MediaStore">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.MediaStore"/>
         <activity
             android:name=".safdemos.MainSAFDemosActivity"
             android:exported="true"
             android:label="@string/app_08"
-            android:theme="@style/Theme.SAFDemos">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.SAFDemos"/>
         <activity
             android:name=".scopedstorage.MainScopedStorageActivity"
             android:exported="true"
             android:label="@string/app_09"
-            android:theme="@style/Theme.ScopedStorage.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.ScopedStorage.NoActionBar"/>
 
         <activity
             android:name=".sharingshortcuts.MainSharingShortcutsActivity"
@@ -160,12 +121,7 @@
             android:name=".storageclient.storageclient.MainStorageClientActivity"
             android:exported="true"
             android:label="@string/app_11"
-            android:uiOptions="splitActionBarWhenNarrow">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:uiOptions="splitActionBarWhenNarrow"/>
 
         <!-- Only needed if you want to add a thumbnail to the direct share.
             FileProvider is a subclass of ContentProvider that facilitates secure sharing.
