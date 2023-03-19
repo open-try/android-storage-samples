@@ -16,10 +16,13 @@
 
 package com.opentry.android_storage_samples.contentproviderpaging;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.opentry.android_storage_samples.R;
 
 /**
  * ViewHolder that represents an image.

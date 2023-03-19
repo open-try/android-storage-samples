@@ -16,15 +16,17 @@
 
 package com.opentry.android_storage_samples.contentproviderpaging;
 
-import com.bumptech.glide.Glide;
-
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.opentry.android_storage_samples.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,9 @@ class ImageAdapter extends RecyclerView.Adapter<ImageViewHolder> {
 
     private final Context mContext;
 
-    /** Holds the information for already retrieved images. */
+    /**
+     * Holds the information for already retrieved images.
+     */
     private final List<ImageDocument> mImageDocuments = new ArrayList<>();
 
     /**

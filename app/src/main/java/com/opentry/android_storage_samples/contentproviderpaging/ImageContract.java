@@ -24,7 +24,7 @@ import android.provider.BaseColumns;
  */
 class ImageContract {
 
-    static final String AUTHORITY = "com.example.android.contentproviderpaging.documents";
+    static final String AUTHORITY = "com.opentry.android_storage_samples.contentproviderpaging.documents";
 
     static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/images");
 

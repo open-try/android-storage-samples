@@ -17,7 +17,10 @@
 package com.opentry.android_storage_samples.contentproviderpaging;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.opentry.android_storage_samples.R;
 
 /**
  * The launcher Activity.

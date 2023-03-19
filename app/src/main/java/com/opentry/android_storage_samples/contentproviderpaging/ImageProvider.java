@@ -27,9 +27,10 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CancellationSignal;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -79,13 +80,13 @@ public class ImageProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] strings, @Nullable String s,
-            @Nullable String[] strings1, @Nullable String s1) {
+                        @Nullable String[] strings1, @Nullable String s1) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, Bundle queryArgs,
-            CancellationSignal cancellationSignal) {
+                        CancellationSignal cancellationSignal) {
         int match = sUriMatcher.match(uri);
         // We only support a query for multiple images, return null for other form of queries
         // including a query for a single image.
@@ -162,7 +163,7 @@ public class ImageProvider extends ContentProvider {
 
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s,
-            @Nullable String[] strings) {
+                      @Nullable String[] strings) {
         throw new UnsupportedOperationException();
     }
 
